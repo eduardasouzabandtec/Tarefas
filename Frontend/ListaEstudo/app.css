@@ -1,0 +1,138 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color:white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+.titulo-estudos{
+    height: 7.610350076103501vh;
+    margin: 0%;
+   background-color: #2d4059;
+    display: flex;
+}
+.titulo-estudos h2{
+    margin: 0%;
+    margin: auto;
+    color: white;
+}
+.lista-geral{
+    width: 90%;
+    margin: auto;
+}
+.lista{
+    background: rgba( 234, 84, 85, 1.00 );
+    box-shadow: 0 8px 32px 0 rgb(240 123 63 / 58%);
+    backdrop-filter: blur( 12.5px );
+    -webkit-backdrop-filter: blur( 12.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    align-items: center;
+    flex-direction: column;;
+    margin-top: 4vh;
+    color: white;
+}
+.lista label{
+    margin-bottom: 1.5vh;
+    font-size: larger;
+    text-align: center;
+}
+.conteiner-home{
+    height: auto;
+    min-height: 72vh;
+    display: block;
+}
+.button-item{
+    background-color: #2d4059;
+    border-radius: 8px;
+    border: 1px ;
+    border: none;
+    color: white;
+    width: 27.397260273972602vh;
+    height: 7.610350076103501vh;
+    font-size: larger;
+    font-weight: bold;
+    transition: background .3s;
+}
+.button-item:hover{
+    background-color: #ffd460;
+}
+.modal{
+    background: rgba( 234, 84, 85, 1.00 );
+    position: fixed;
+    margin: 0 auto;
+    padding: 0;
+    box-shadow: 0 0 2px #fff;
+    top: 20%;
+    color: white;
+    display: none;
+    width: 95%;
+    margin-left: 2%;
+}
+.btn-close{
+    border-radius: 8px;
+    border: 1px ;
+    color: white;
+    width: 27.397260273972602vh;
+    height: 7.610350076103501vh;
+    font-size: larger;
+    font-weight: bold;
+    background-color: #ffd460;
+}
+.modal-header,.modal-footer{
+    padding: 10px;
+    font-size: larger;
+}
+.modal-header{
+    text-align: center;
+    background: #2d4059;
+}
+.modal-footer{
+    background: #2d4059;
+    text-align: center;
+}
+.modal-body{
+    text-align: center;
+    display: grid;
+    padding: 30px;
+}
+
+.modal input, .text-description{
+    border: 0px;
+    border-radius: 8px;
+    font-size: larger;
+}
+.input-title, .text-description{
+    height: 30px;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    padding: 7px 0;
+    background: white;
+}
+.input-title:active{
+    border: 0px;
+    border-color: white;
+}
+.text-description{
+    height: 100px;
+}
+.error{
+    text-align: left;
+    font-size: medium;
+    color: black;
+    font-style: normal;
+}
+}
+.modal textarea::placeholder, input::placeholder{
+    text-align: center;
+    font-weight: normal;
+    font-size: larger;
+}
+
+footer{
+    justify-content: center;
+    display: flex;
+    margin-top: 6vh;
+    margin-bottom: 2vh;
+}
