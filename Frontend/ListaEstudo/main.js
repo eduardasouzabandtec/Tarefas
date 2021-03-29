@@ -1,64 +1,19 @@
-const url = "http://localhost:8080";
-const data = get(url);
-const divlista = document.querySelector("#lista");
-const divConteiner = document.querySelector("#conteiner");
-const divModal = document.querySelector("#dv-modal");
-const btnOpenModal = document.querySelector("#btn-Open");
-const btnCloseModal = document.querySelector("#btn-close");
-const inputTitle = document.querySelector("#titulo");
-const textDiscription = document.querySelector("#text-description");
-const errorText = document.querySelector("#erro-discription");
-const errorInput = document.querySelector("#erro-titulo")
+
 btnOpenModal.addEventListener("click", openModal);
 btnCloseModal.addEventListener("click", closeModal);
 inputTitle.addEventListener("keyup",validaInput);
 textDiscription.addEventListener("keyup",validaTextArea)
-//procurar formas melhores de fazer o get e post
-function get(url) {
-    let request = new XMLHttpRequest()
-    request.open("GET", url, false)
-    request.send()
-    return request.responseText
-}
-function post(url,body){
-    let request = new XMLHttpRequest() 
-    request.open("POST",url,true);
-    request.setRequestHeader("Content-type","application/json");
-    request.send(JSON.stringify(body));
-    request.onload = ()=>{
-        if(request.status == 201){
-            reload();
+
+const cadastraTarefas = _ => {
+    post(
+        {
+            "titulo": inputTitle.value,
+            "descricao": textDiscription.value
         }
-        console.log("status",request.status)
-    }
-    return request.responseText
-
-}
-function cadastraTarefas(){
-    let titulo = inputTitle.value;
-    let description = textDiscription.value;
-    body ={
-        "titulo": titulo,
-        "descricao":description
-    }
-    post(url,body);
-}
-// não deixar assim
-function reload(){
- window.location.reload();
+    );
 }
 
-function criaDiv(lista) {
-    if (!lista.status) {
-        divlista.innerHTML += `
-    <div class="lista">
-                <h2>${lista.titulo}</h2>
-                <label class="name" for="">${lista.descricao}</label>
-        </div>
-    `
-    }
 
-}
 function efeitoBlur(status){
     if(status){
         divConteiner.style.filter = "blur(5px)";
@@ -116,10 +71,25 @@ function validaTextArea(){
     }
 }
 
-function main(data) {
-    lista = JSON.parse(data)
-    lista.forEach(element => {
-        let list = criaDiv(element)
-    });
+function main(dados) {
+    divlista.innerHTML = JSON.parse(dados).map(lista => {
+        return `<div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div id="${lista.id}" class="swiper-slide ${lista.status ? "lista-feito" : "lista"}">
+          <h2 id="${lista.id}">${lista.titulo}</h2>
+          <label id="${lista.id}" class="name" for="">${lista.descricao}</label></div>
+        </div>
+      </div>`
+    }).join("")
+
+    const swiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+      });
+      swipper()
+    
+   
 }
-main(data);
+main(get(url));
+

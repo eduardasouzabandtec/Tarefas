@@ -10,6 +10,7 @@ body{
     margin: 0%;
    background-color: #2d4059;
     display: flex;
+    margin-bottom: 2vh;
 }
 .titulo-estudos h2{
     margin: 0%;
@@ -29,10 +30,27 @@ body{
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     display: flex;
     align-items: center;
-    flex-direction: column;;
-    margin-top: 4vh;
+    flex-direction: column;
     color: white;
+    width: 100%;
 }
+.lista-feito{
+    background: rgb(234 84 85 / 44%);
+    box-shadow: 0 8px 32px 0 rgb(240 123 63 / 28%);
+    backdrop-filter: blur( 12.5px );
+    -webkit-backdrop-filter: blur( 12.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    width: 100%;
+}
+.swiper-slide {
+    margin-bottom: 2vh;
+}
+
 .lista label{
     margin-bottom: 1.5vh;
     font-size: larger;
@@ -83,6 +101,10 @@ body{
 .modal-header,.modal-footer{
     padding: 10px;
     font-size: larger;
+}
+.swipper{
+    display: flex;
+    flex-direction: row;
 }
 .modal-header{
     text-align: center;
