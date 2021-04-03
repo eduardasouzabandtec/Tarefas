@@ -1,0 +1,39 @@
+BACK
+arrumar o endpoint delete-OK
+criar o endpoint put, que muda o status conforme o Id-OK
+
+FRONT
+
+refatorar o endpoint - OK
+
+criar endpoint put -OK
+
+refatorar o codigo -OK (validar)
+
+identa��o -OK (validar)
+
+
+axios - ok 
+
+modulos
+
+testes
+
+Tela quando n�o vier nenhuma requisi��o - OK
+
+tela caso der erro no get - OK
+
+popup caso der erro no post - OK
+
+popup caso der erro no delete - OK 
+
+popup caso der erro no put - OK
+
+modal confirmar exclus�o - OK
+
+evento que captura o arrastar do mouse chamando mais de uma vez - OK
+
+Criar fun��o para mudar o status da tarefa - OK
+
+pequisar como fazer um loading enquanto os dados est�o carregando - n�o precisa
+
